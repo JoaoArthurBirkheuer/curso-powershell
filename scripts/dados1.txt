@@ -1,0 +1,11 @@
+Nome: João da Silva
+Idade: 30
+Nota: 8.5
+
+Nome: Maria Oliveira
+Idade: 25
+Nota: 9.0
+
+Nome: Carlos Souza
+Idade: 28
+Nota: 7.8
