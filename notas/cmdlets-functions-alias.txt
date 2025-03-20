@@ -1,0 +1,12 @@
+Cmdlet: Comandos nativos, implementados em .NET, que realizam tarefas específicas 
+e têm funcionalidades completas dentro do PowerShell.
+
+Function: Blocos de código reutilizáveis definidos pelo usuário 
+que permitem criar sua própria lógica e tarefas.
+
+Alias: Atalhos para comandos, facilitando a execução de tarefas 
+sem precisar digitar o nome completo dos cmdlets ou funções.
+
+-ShowWindow
+
+Get-ChildItem Function:\Clear-Host | type

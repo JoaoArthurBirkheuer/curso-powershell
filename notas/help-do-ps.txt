@@ -1,0 +1,21 @@
+Sobre o Update-Help: Update-Help checks the version of the help files on your computer. 
+If you don't have help files for a module or if your help files are outdated, 
+Update-Help downloads the newest help files. The help files can be downloaded and 
+installed from the internet or a file share.
+
+Dependendo do prefixo do Help (no caso, Get-Help <Command>), ele vai te fornecer
+	--> Exemplos
+	--> Sintaxe
+	--> Links
+	--> Descrição
+a respeito do comando. Pode incluir a flag -Online e abrir
+no suporte da Microsoft pelo nav. o Help do comando especificado 
+Update-Help
+
+Update-Help -UICulture en-US
+Test-NetConnection -ComputerName docs.microsoft.com -Port 443
+
+Get-Help * | Unblock-File
+Remove-Item -Path "C:\Program Files\WindowsPowerShell\Modules\*\Help" -Recurse -Force
+Update-Help
+

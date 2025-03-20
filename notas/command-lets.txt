@@ -1,0 +1,19 @@
+PowerShell executa os comandos nativos do CMD
+
+cd.. --> voltar 1 diretório
+cd / --> raíz
+dir --> diretório atual
+ls --> listar diretórios
+cls --> clear screen
+
+Command-lets são comandos especiais que se
+baseiam em um padrão de verbo-substantivo
+
+Get-Command -CommandType CmdLet (lista comandos do PS)
+Varia de sistema para sistema (curso é do Windows 10)
+
+Comentários precedidos de '#'
+'.ps1' --> extensão do PowerShell
+
+
+

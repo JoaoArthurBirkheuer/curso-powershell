@@ -1,0 +1,19 @@
+Botão direito na janela do Windows Power Shell --> várias propriedades, incluindo:
+	Usar console no modo herdado
+	Opções de edição
+	Tamanho de buffer
+	Fonte, Layout, Cores e Específicos do Terminal
+
+Ele possui Intellisense (TAB dá autocomplete conforme escreve)
+Ele interpreta objetos, ou melhor, tem interpretação de objetos
+Usa linguagem de script expressiva (usa muitas bibliotecas, como:
+	.NET Framework
+	WMI (Windows Management Framework)
+	COM (Component Object Model)
+
+--> $PSVersionTable.PSVersion (variável do PS)
+	Traz a versão do PS carregado
+--> (Get-Host).Version
+	Traz a versão do Host do PS carregado (em acessos remotos isso faz diferença)
+
+-Syntax --> sintaxe do comando a ser utilizado
