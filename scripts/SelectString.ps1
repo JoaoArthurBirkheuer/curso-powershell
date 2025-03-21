@@ -27,3 +27,5 @@ Get-Content -Path .\dados1.txt | Select-String -Pattern "Nota"
 Get-ChildItem -Filter *.txt | ForEach-Object {
     Get-Content -Path $_.FullName | Select-String -Pattern "Nome:"
 }
+
+# -NotMatch
