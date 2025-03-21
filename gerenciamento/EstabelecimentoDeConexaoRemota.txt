@@ -1,0 +1,67 @@
+PowerShell Remoting Between Different Domains - Configuration Guide
+
+==============================================
+ON THE MACHINE INITIATING THE CONNECTION
+==============================================
+
+1. Check Current Trusted Hosts:
+   PowerShell:
+   Get-Item WSMan:\\localhost\\Client\\TrustedHosts
+
+2. Add the Remote Machine to Trusted Hosts:
+   PowerShell:
+   Set-Item WSMan:\\localhost\\Client\\TrustedHosts "REMOTE_MACHINE" -Concatenate
+
+   If allowing connections to ANY machine (Less Secure):
+   Set-Item WSMan:\\localhost\\Client\\TrustedHosts "*"
+
+3. Check If WinRM is Enabled:
+   Command Prompt (CMD):
+   winrm quickconfig
+
+4. Verify TrustedHosts Setting:
+   CMD:
+   winrm get winrm/config/client
+
+==============================================
+ON THE REMOTE MACHINE (CLIENT)
+==============================================
+
+1. Enable PowerShell Remoting:
+   PowerShell:
+   Enable-PSRemoting -Force
+
+2. Add Administrator Machine to Trusted Hosts:
+   PowerShell:
+   Set-Item WSMan:\\localhost\\Client\\TrustedHosts "ADMIN_MACHINE" -Concatenate
+
+   Or allow all incoming connections (Less Secure):
+   Set-Item WSMan:\\localhost\\Client\\TrustedHosts "*"
+
+3. Restart WinRM Service:
+   PowerShell:
+   Restart-Service WinRM
+
+==============================================
+ESTABLISHING A REMOTE POWER SHELL SESSION
+==============================================
+
+1. From the Administrator Machine (Client):
+   PowerShell:
+   New-PSSession -ComputerName REMOTE_MACHINE -Credential "DOMAIN\\Administrator"
+
+2. If authentication fails, try using SSL:
+   PowerShell:
+   New-PSSession -ComputerName REMOTE_MACHINE -Credential "DOMAIN\\Administrator" -UseSSL -Port 5986
+
+3. For Workgroup Environments:
+   PowerShell:
+   New-PSSession -ComputerName REMOTE_MACHINE -Credential "REMOTE_MACHINE\\Administrator" -Authentication Negotiate
+
+==============================================
+OPTIONAL: ALLOW UNENCRYPTED CONNECTIONS (LESS SECURE)
+==============================================
+
+If authentication issues persist, allow unencrypted communication (for testing only):
+   PowerShell:
+   Set-Item WSMan:\\localhost\\Service\\AllowUnencrypted $true

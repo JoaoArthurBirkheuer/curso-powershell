@@ -1,0 +1,8 @@
+É bom fazer um tratamento para uma variável receber a senha
+do administrador para maior facilidade, em virtude da possibilidade
+de aumento de complexidade de operações na conexão
+
+$cred = Get-Credential <NAME>\administrator
+$rede = New-PSSession -ComputerName {Get-Content C:\Scripts\servers.txt} - Credential $cred
+
+Invoke-Command $rede {Get-Service}

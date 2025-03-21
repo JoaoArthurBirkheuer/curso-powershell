@@ -1,0 +1,24 @@
+--> Construído em cima do Windows Remote Management
+--> A regra do Firewall é criada ao habilitar o PowerShell Remoto
+--> A máquina que eu estiver usando deve estar em mesmo domínio
+    ou é um Trusted Computer
+
+--> PowerShell suporta sessões persistentes e Invoke-Command
+
+Invoke-Command é um cmdlet do PowerShell que permite executar comandos em computadores locais e remotos. Ele também retorna todos os resultados dos comandos, incluindo erros. 
+O Invoke-Command pode ser usado para:
+ 
+. Instalar e atualizar software em vários computadores
+. Executar scripts de manutenção em servidores remotos
+. Executar um script em um ou mais computadores remotos
+
+. Para executar um comando em um computador remoto, pode usar o parâmetro ComputerName.
+ 
+. Para executar uma série de comandos relacionados que compartilham dados, pode usar o cmdlet New-PSSession para criar uma PSSession (uma conexão persistente) no computador remoto.
+ 
+. Para executar um comando em uma sessão desconectada, pode usar o parâmetro InDisconnectedSession. 
+
+. Para executar um comando em um trabalho em segundo plano, pode usar o parâmetro AsJob
+
+
+
